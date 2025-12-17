@@ -1,12 +1,11 @@
-body {
+.home {
     background-image: url('./img/fundo_home.png');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
     min-height: 108vh;
-    align-items: center;
-    text-align: center;
 }
+
 
 .texto_crie {
     color: #ffffff;
@@ -14,7 +13,6 @@ body {
     top: 230px;
     position: relative;
     text-align: center;
-
 }
 
 .texto_construa {
@@ -29,7 +27,8 @@ body {
 }
 
 .navbar {
-    margin-top: 20px;
+    margin-top: 0;
+    padding-top: 30px;
 }
 
 .navbar-nav .nav-item {
@@ -39,7 +38,6 @@ body {
 .navbar-nav .nav-link:hover {
     text-decoration: underline;
     text-underline-offset: 15px;
-
 }
 
 .botao_orcamento {
@@ -58,4 +56,145 @@ body {
     color: #ffffff;
     margin-left: 7px;
     font-size: 15px;
+}
+
+.servicos {
+    background-image: url('./img/Servicos_Escuro_Web.png');
+    background-size: cover;
+    min-height: 108vh;
+}
+
+.card {
+    background-color: rgba(29, 27, 41, 0.74);
+    top: 160px;
+    width: 380px;
+    left: 100px;
+    height: 200px;
+    border-radius: 45px;
+    border: none;
+
+}
+
+.card-body {
+    color: #ffffff;
+    margin-left: 30px;
+    font-size: 25px;
+}
+
+.servico-wrapper {
+    position: absolute;
+    top: 155%;
+    left: 52%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+
+.icon-servico {
+    font-size: 180px;
+    transition: transform 0.8s ease;
+    transform-style: preserve-3d;
+    color: white;
+}
+
+.flip {
+    transform: rotateY(180deg);
+}
+
+.seta-btn {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 40px;
+    cursor: pointer;
+}
+
+.portifolio {
+    background-image: url('./img/Portifolio_Escuro.png');
+    background-size: cover;
+    min-height: 100vh;
+}
+
+.orcamento {
+    position: relative;
+    height: 500px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    gap: -100px;
+    perspective: 1000px;
+    background-image: url('./img/Orcamento_Escuro.png');
+    background-size: cover;
+    min-height: 108vh;
+}
+
+.orcamento-card {
+    background: linear-gradient(to bottom,
+            rgba(69, 95, 140, 0.493),
+            rgba(0, 0, 0, 0.493));
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    border-radius: 45px;
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+    width: 315px;
+    height: 78%;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+    position: absolute;
+    bottom: 0;
+    transition: transform 0.5s, z-index 0.5s;
+    left: 760px;
+}
+
+.card-front {
+    z-index: 3;
+    transform: scale(1) translateY(0);
+    height: 77%;
+}
+
+.card-back-left {
+    z-index: 2;
+    transform: scale(0.9) translateX(-280px) translateY(20px);
+
+}
+
+.card-back-right {
+    z-index: 2;
+    transform: scale(0.9) translateX(290px) translateY(20px);
+}
+
+.card-body2 {
+    color: #ffffff;
+    margin-left: 60px;
+    font-size: 25px;
+    margin-top: 80px;
+}
+
+.texto_orcamento {
+    position: absolute;
+    top: 170px;
+    left: 17%;
+    transform: translateX(-50%);
+    font-size: 16px;
+    font-family: "Imprima", sans-serif;
+    color: #ffffff;
+    z-index: 5;
+    text-align: justify;
+    width: 350px;
+
+}
+.texto_orcamento2 {
+    position: absolute;
+    top: 260px;
+    left: 17%;
+    transform: translateX(-50%);
+    font-size: 16px;
+    font-family: "Imprima", sans-serif;
+    color: #ffffff;
+    z-index: 5;
+    text-align: justify;
+    width: 350px;
+
 }
