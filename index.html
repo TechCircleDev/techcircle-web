@@ -11,6 +11,8 @@
   <link href="https://fonts.googleapis.com/css2?family=Imprima&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
 
+  <link rel="icon" href="./img/logo.png">
+
   <title>TechCircle</title>
 </head>
 
@@ -30,12 +32,12 @@
               <a class="nav-link" href="#servicos">Serviços</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Portfólio</a>
+              <a class="nav-link" href="#portifolio">Portifólio</a>
             </li>
           </ul>
         </div>
 
-        <a href="#" class="botao_orcamento end-0 me-3">
+        <a href="#orcamento" class="botao_orcamento end-0 me-3">
           Solicitar um orçamento <i class="bi bi-arrow-right"></i>
         </a>
 
@@ -79,25 +81,52 @@
     <h1 class="texto_orcamento">Temos os nossos planos, mas entre em contato para ter acesso ao orçameto para o seu
       projeto.</h1>
     <p class="texto_orcamento2">Escolha o meio de contato:</p>
-    
-    <button>Entrar em contato pelo WhatsApp</button>
-    <button>Entrar em contato pelo email</button>
+
+    <div class="email-wrapper">
+      <button class="btn_whats">
+        <img src="./img/whats.png" alt="Whatsapp" class="img_whats">
+        Entrar em contato pelo WhatsApp
+      </button>
+      <button class="btn_email">
+        <img src="./img/gmail.webp" alt="Email" class="img_whats">
+        Entrar em contato pelo E-mail
+      </button>
+      <p class="texto_ou">───────────── OU ───────────────</p>
+
+      <form class="form-email">
+        <div class="mb-3">
+          <label class="form-label">Digite seu e-mail:</label>
+          <input type="email" class="form-control">
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label">Nos conte sua ideia:</label>
+          <textarea class="form-control form-control-ideia" rows="4"></textarea>
+        </div>
+
+        <button type="submit" class="btn btn">Enviar</button>
+      </form>
+    </div>
+
+
+
+
 
     <div class="card orcamento-card card-back-left">
       <div class="card-body2">
-        <h2>free</h2>
+        <h2>Free</h2>
       </div>
     </div>
 
     <div class="card orcamento-card card-front">
       <div class="card-body2">
-        <h2>pro</h2>
+        <h2>Pro</h2>
       </div>
     </div>
 
     <div class="card orcamento-card card-back-right">
       <div class="card-body2">
-        <h2>premium</h2>
+        <h2>Premium</h2>
       </div>
     </div>
   </section>
@@ -106,8 +135,32 @@
 
 
 
+  <button id="btn-topo">
+    <img src="./img/seta.png" alt="Voltar ao topo">
+  </button>
 
   <script>
+
+    const btnTopo = document.getElementById("btn-topo");
+
+    // Mostrar a seta quando rolar a página
+    window.addEventListener("scroll", () => {
+      if (window.scrollY > 300) {
+        btnTopo.style.display = "block";
+      } else {
+        btnTopo.style.display = "none";
+      }
+    });
+
+    // Voltar suavemente para o topo
+    btnTopo.addEventListener("click", () => {
+      window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+      });
+    });
+
+
     let ativo = false;
 
     const icone = document.getElementById("icone");
@@ -137,6 +190,7 @@
       }, 800);
     });
   </script>
+
 
 
 </body>
