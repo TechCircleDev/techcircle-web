@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Imprima&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+
+  <link rel="icon" href="./img/logo.png">
+
+  <title>TechCircle</title>
+</head>
+
+<body>
+
+  <section class="home">
+
+    <nav class="navbar navbar-expand-lg navbar-dark">
+      <div class="container-fluid">
+
+        <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
+          <ul class="navbar-nav mx-auto">
+            <li class="nav-item">
+              <a class="nav-link active" href="#">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#servicos">Serviços</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#portifolio">Portifólio</a>
+            </li>
+          </ul>
+        </div>
+
+        <a href="#orcamento" class="botao_orcamento end-0 me-3">
+          Solicitar um orçamento <i class="bi bi-arrow-right"></i>
+        </a>
+
+      </div>
+    </nav>
+
+    <div class="conteudo-home">
+      <h1 class="texto_crie">Crie do seu jeito</h1>
+      <h2 class="texto_construa">
+        Construa os sites e aplicativos que sempre sonhou
+      </h2>
+    </div>
+
+  </section>
+
+  <section class="servicos" id="servicos">
+    <div class="card servicos-card">
+      <div class="card-body">
+        <h2 id="texto-servico">Sites</h2>
+      </div>
+    </div>
+
+    <div class="servico-wrapper">
+
+      <i id="icone" class="bi bi-globe icon-servico"></i>
+
+      <button id="toggleBtn" class="seta-btn">
+        <i class="bi bi-chevron-right"></i>
+      </button>
+
+    </div>
+  </section>
+
+
+
+  <section class="portifolio" id="portifolio">
+
+  </section>
+
+  <section class="orcamento" id="orcamento">
+    <h1 class="texto_orcamento">Temos os nossos planos, mas entre em contato para ter acesso ao orçameto para o seu
+      projeto.</h1>
+    <p class="texto_orcamento2">Escolha o meio de contato:</p>
+
+    <div class="email-wrapper">
+      <button class="btn_whats">
+        <img src="./img/whats.png" alt="Whatsapp" class="img_whats">
+        Entrar em contato pelo WhatsApp
+      </button>
+      <button class="btn_email">
+        <img src="./img/gmail.webp" alt="Email" class="img_whats">
+        Entrar em contato pelo E-mail
+      </button>
+      <p class="texto_ou">───────────── OU ───────────────</p>
+
+      <form class="form-email">
+        <div class="mb-3">
+          <label class="form-label">Digite seu e-mail:</label>
+          <input type="email" class="form-control">
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label">Nos conte sua ideia:</label>
+          <textarea class="form-control form-control-ideia" rows="4"></textarea>
+        </div>
+
+        <button type="submit" class="btn btn">Enviar</button>
+      </form>
+    </div>
+
+
+
+
+
+    <div class="card orcamento-card card-back-left">
+      <div class="card-body2">
+        <h2>Free</h2>
+      </div>
+    </div>
+
+    <div class="card orcamento-card card-front">
+      <div class="card-body2">
+        <h2>Pro</h2>
+      </div>
+    </div>
+
+    <div class="card orcamento-card card-back-right">
+      <div class="card-body2">
+        <h2>Premium</h2>
+      </div>
+    </div>
+  </section>
+
+
+
+
+
+  <button id="btn-topo">
+    <img src="./img/seta.png" alt="Voltar ao topo">
+  </button>
+
+  <script>
+
+    const btnTopo = document.getElementById("btn-topo");
+
+    // Mostrar a seta quando rolar a página
+    window.addEventListener("scroll", () => {
+      if (window.scrollY > 300) {
+        btnTopo.style.display = "block";
+      } else {
+        btnTopo.style.display = "none";
+      }
+    });
+
+    // Voltar suavemente para o topo
+    btnTopo.addEventListener("click", () => {
+      window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+      });
+    });
+
+
+    let ativo = false;
+
+    const icone = document.getElementById("icone");
+    const texto = document.getElementById("texto-servico");
+    const botao = document.getElementById("toggleBtn");
+
+    botao.addEventListener("click", () => {
+      ativo = !ativo;
+
+
+      icone.classList.add("flip");
+
+
+      setTimeout(() => {
+        if (ativo) {
+          icone.className = "bi bi-phone icon-servico flip";
+          texto.textContent = "Aplicativos";
+        } else {
+          icone.className = "bi bi-globe icon-servico flip";
+          texto.textContent = "Sites";
+        }
+      }, 400);
+
+
+      setTimeout(() => {
+        icone.classList.remove("flip");
+      }, 800);
+    });
+  </script>
+
+
+
+</body>
+
+
+</html>
